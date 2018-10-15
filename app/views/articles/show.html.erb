@@ -1,0 +1,31 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+<%= datetime_select("post", "published_on") %>
+<%= select_date() %>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+<%= time_zone_select( "user", "time_zone") %>
+<%= check_box_tag(:pet_dog) %>
+<%= label_tag(:pet_dog, "I own a dog") %>
+<%= check_box_tag(:pet_cat) %>
+<%= label_tag(:pet_cat, "I own a cat") %>
+
+<h2>Comments</h2>
+<%= render @article.comments%>
+ 
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<%= link_to 'Back', articles_path %>
+<%= radio_button_tag(:age, "child") %>
+<%= label_tag(:age_child, "I am younger than 21") %>
+<%= radio_button_tag(:age, "adult") %>
+<%= label_tag(:age_adult, "I'm over 21") %>
+<%= search_field(:user, :name) %>
+<%= select_tag(:city_id, options_for_select([['Lisbon', 1], ['Altlanta', 2]], 2)) %>
